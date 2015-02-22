@@ -29,7 +29,11 @@ module pedestal()
 
 		// middle cutout
 		translate([0, thickness, -epsilon])
-			roundedTrapezoid([width - thickness * 2, height - thickness * 2, depth + 2 * epsilon], radius / 2, bottom_width - 2 * thickness);
+			roundedTrapezoid(
+				[width - thickness * 2, height - thickness * 2, depth + 2 * epsilon],
+				radius / 2,
+				bottom_width - 2 * thickness
+			);
 		
 		// side cutout
 		translate([0, height / 2, depth / 2])
@@ -39,10 +43,7 @@ module pedestal()
 		// mounting holes for wood screws
 		for (i = [-10, 10])
 			translate([0, height, depth / 2 + i])
-			rotate([90, 0, 0])
-				woodscrew_cutout();
+				rotate([90, 0, 0])
+					woodscrew_cutout();
 	}
-
 }
-
-pedestal();

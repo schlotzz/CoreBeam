@@ -83,7 +83,6 @@ module bearing_cutout_lm8uu(bearings = 1)
 	// show bearing
 	%translate([0, 0, 13])
 		bearing_lm8uu(bearings);
- 
 }
 
 
@@ -172,7 +171,6 @@ module bearing_cutout_623zz_pulley()
 	// show idler pulleys
 	%translate([0, 0, 8])
 		bearing_623zz_pulley();
-
 }
 
 

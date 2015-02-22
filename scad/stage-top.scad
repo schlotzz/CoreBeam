@@ -10,11 +10,10 @@
 // include files
 include <common.scad>;
 include <bearing.scad>;
-include <stage-y.scad>;
 
 
 
-// y stage
+// top stage
 module top_stage()
 {
 	width = 70;
@@ -23,7 +22,6 @@ module top_stage()
 
 	difference()
 	{
-	
 		union()
 		{
 			// main body
@@ -53,7 +51,7 @@ module top_stage()
 
 		// extra space for twisted belt
 		for (y = [-0.5, -11.5])
-			translate([-width / 4, y, 14])
+			translate([-width / 4, y, 13.5])
 				rotate([0, -90, 0])
 					cylinder(r1 = 2, r2 = 4, h = width / 4 + epsilon, $fn = 32);
 
@@ -62,30 +60,5 @@ module top_stage()
 			woodscrew_cutout();
 		translate([width / 2 - 8, -height / 2 + 8, 0])
 			woodscrew_cutout();
-	
-
 	}
-
 }
-
-translate([0, 0, -2])
-top_stage();
-
-/*
-translate([80, 0, 0])
-	mirror([1, 0, 0])
-		top_stage();
-*/
-
-// show smooth rods
-%translate([23, 14, 13])
-	rotate([-90, 0, 0])
-		cylinder(r = 4, h = 200, center = 0, $fn = 16);
-
-// show belts
-%for(i = [-5.75, 5.25])
-	translate([i, 10 - i, 9])
-		cube([1.5, 80, 6]);
-
-%translate([0, 50, 0])
-	y_stage();

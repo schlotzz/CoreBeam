@@ -19,7 +19,6 @@ module gt2_belt_cutout(length = 16, depth = 8)
 
 	union()
 	{
-	
 		// belt cutout
 		for (x = [-3 + clearance, 3 - clearance])
 		{
@@ -53,6 +52,5 @@ module gt2_belt_cutout(length = 16, depth = 8)
 					cube([8.4 + clearance * 2, 4.2 + clearance, depth]);
 			}
 		}
-
 	}
 }

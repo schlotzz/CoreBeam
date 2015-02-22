@@ -4,13 +4,12 @@
 // Author: Dominik Scholz <schlotzz@schlotzz.com>
 // visit: http://www.schlotzz.com
 //
-// bottom idler
+// bottom motor mount
 
 
 // include files
 include <common.scad>;
 include <switch.scad>;
-include <stage-y.scad>;
 
 
 
@@ -24,7 +23,6 @@ module bottom_stage(has_switch = false)
 
 	difference()
 	{
-	
 		union()
 		{
 			// main body
@@ -44,8 +42,8 @@ module bottom_stage(has_switch = false)
 			translate([motor_offset, 7.85, 28 / 2])
 				intersection()
 				{
-					cube([nema17_width, nema17_width, 17], center = true);
-					cylinder(r = nema17_width / 2 + 7, 17, $fn = 64);
+					cube([nema17_width, nema17_width, 21], center = true);
+					cylinder(r = nema17_width / 2 + 7, h = 21, $fn = 64);
 				}
 		}
 
@@ -91,45 +89,5 @@ module bottom_stage(has_switch = false)
 				rotate([0, 180, 0])
 					endstop_switch_cutout(5);
 		}
-
-	}
-
-}
-
-
-
-// motor shim
-module bottom_stage_motor_shim()
-{
-	depth = 2;
-
-	difference()
-	{
-	
-		intersection()
-		{
-			translate([0, 0, depth / 2])
-				cube([nema17_width, nema17_width, depth], center = true);
-			cylinder(r = nema17_width / 2 + 7, h = depth, $fn = 64);
-		}
-
-		// nema17 holes
-		translate([0, 0, -epsilon])
-		union()
-		{
-			// mounting holes
-			for (i = nema17_hole_offsets)
-				translate(i)
-					cylinder(r = m3_wide_radius, h = 30, $fn = 16);
-
-			// center cutout for pulley
-			cylinder(r = 11 + 0.5, h = depth + 2 * epsilon, $fn = 64);
-
-			// cutout for belt
-			//translate([-7.5, -50, 0])
-			//	cube([15, 50, depth + 2 * epsilon]);
-		}
 	}
 }
-
-bottom_stage_motor_shim();

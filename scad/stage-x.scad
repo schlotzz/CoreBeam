@@ -24,7 +24,6 @@ module x_stage()
 
 	difference()
 	{
-	
 		// main body
 		translate([0, 0, depth / 2 + 4])
 			roundedRectangle([width, height, depth], 3, $fn = 32);
@@ -69,7 +68,5 @@ module x_stage()
 			for (y = [-20, 20])
 				translate([x, y, 2])
 					cylinder(r = m3_radius, h = depth * 2, $fn = 16);
-
 	}
-
 }

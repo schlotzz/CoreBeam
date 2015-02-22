@@ -49,8 +49,4 @@ module cable_mount()
 			rotate([-90, 0, 0])
 				woodscrew_cutout();
 	}
-
-
 }
-
-cable_mount();

@@ -23,6 +23,3 @@ module corebeam_label()
 			linear_extrude(file = "../logo/corebeam-simplified-foreground.dxf", height = 2.25, center = false);
 	}
 }
-
-
-corebeam_label();
