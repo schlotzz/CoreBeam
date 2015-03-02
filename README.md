@@ -1,4 +1,4 @@
--![CoreBeam Logo](/logo/corebeam-logo-github.png)
+![CoreBeam Logo](/logo/corebeam-logo-github.png)
 
 CoreBeam is a low cost DIY laser cutter/engraver based on [CoreXY](http://corexy.com/) kinematics. Its size can be scaled easily to suit your requirements and without the need to reprint parts.
 
