@@ -8,7 +8,7 @@ CoreBeam is a low cost DIY laser cutter/engraver based on [CoreXY](http://corexy
 - workspace size can be increased easily
 
 ### What electronics/firmware have been used?
-The machine is controlled by a slightly modified version 0.8 of [grbl](http://www.github.com/grbl/grbl/) running on an Arduino Uno with grbl-shield, a custom hand-soldered MOSFET-PCB and a cheap current limiting circuit-board.
+The machine is controlled by a [slightly modified](https://github.com/schlotzz/grbl) version 0.9i of [grbl](https://github.com/grbl/grbl) running on an Arduino Uno with grbl-shield, a custom hand-soldered MOSFET-PCB and a cheap current limiting circuit-board.
 
 ### Which software can I use?
 Due to using grbl as firmware a wide range of software can be used with CoreBeam. For streaming g-code via USB both [Universal G-Code Sender](https://github.com/winder/Universal-G-Code-Sender) and [GrblController](https://github.com/zapmaker/GrblHoming) have been tested successfully. Designing vector-images and converting them into g-code is easy as pie with [InkScape](https://inkscape.org) and the [LaserEngraver](http://www.slackersdelight.com/instructables/laserengraver.zip) extension, a heavily modified version of [Gcodetools](http://www.cnc-club.ru/forum/viewtopic.php?f=15&p=101).
