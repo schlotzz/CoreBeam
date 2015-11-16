@@ -34,9 +34,17 @@ module pedestal_stopper(flip = false)
         difference()
         {
             
-            // base
-            translate([-side_thickness, 0, 0])
-                cube([width + side_thickness, depth, height]);
+            // base with rounded corner
+            union()
+            {
+                translate([-side_thickness + 3, 0, 0])
+                    cube([width + side_thickness - 3, depth, height]);
+                translate([-side_thickness, 0, 0])
+                    cube([3, depth - 3, height]);
+                translate([-side_thickness + 3, depth - 3, 0])
+                    cylinder(r = 3, h = height, $fn = 32);
+            }
+
             
             // pedestal cutout
             translate([0, -pedestal_bottom_width / 2 + pedestal_radius, -0.5])
@@ -62,5 +70,3 @@ module pedestal_stopper(flip = false)
     }
     
 }
-
-pedestal_stopper();
